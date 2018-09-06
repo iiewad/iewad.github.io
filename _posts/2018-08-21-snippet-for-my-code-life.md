@@ -5,15 +5,17 @@ date:   2018-08-21 16:00:00 +0800
 categories: blog
 tag: ruby, linux
 ---
-
-### 1. 查看端口被哪个程序占用
+### 查看端口被哪个程序占用
 `sudo lsof -i tcp:port`
 
-### 2. 看到进程的PID，可以将进程杀死。
+### 看到进程的PID，可以将进程杀死。
 `sudo kill -9 PID`
 
 ### 文件查找
-`locate nginx.conf`
+```
+locate nginx.conf
+find . -name game
+```
 
 ### 利用pwgen生成密码
 `pwgen`
@@ -70,4 +72,49 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+```
+
+### VIM 强写
+```vim
+:w !sudo tee %
+```
+
+### Rails4+ 不验证authenticity_token
+```ruby
+skip_before_action :verify_authenticity_token
+```
+
+### GitHub 空项目
+```
+# create a new repository on the command line
+echo "# golang-book-practice" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:iiewad/golang-book-practice.git
+git push -u origin master
+```
+```
+#push an existing repository from the command line
+git remote add origin git@github.com:iiewad/golang-book-practice.git
+git push -u origin master
+```
+
+### Terminal 代理
+```shell
+export http_proxy='http://localhost:8118'
+export https_proxy='http://localhost:8118'
+
+#取消代理
+
+unset http_proxy
+unset https_proxy
+```
+
+### tmux备忘
+```
+tmux new -s session_name
+tmux a -t session_name
+tmux switch -t session_name
+
 ```
