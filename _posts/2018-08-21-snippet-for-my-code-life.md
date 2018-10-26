@@ -5,6 +5,7 @@ date:   2018-08-21 16:00:00 +0800
 categories: blog
 tag: ruby, linux
 ---
+
 ### 查看端口被哪个程序占用
 `sudo lsof -i tcp:port`
 
@@ -99,6 +100,7 @@ git push -u origin master
 git remote add origin git@github.com:iiewad/golang-book-practice.git
 git push -u origin master
 ```
+[iewad](https://iewad.me/)
 
 ### Terminal 代理
 ```shell
@@ -117,4 +119,54 @@ tmux new -s session_name
 tmux a -t session_name
 tmux switch -t session_name
 
+```
+
+### rvm gem install
+```
+rvm @global do gem install bundle
+rvm rubygems current #update gems
+```
+```
+gem install libv8 -v '3.16.14.13'  -- --with-system-v8
+```
+
+### css文本溢出处理
+```css
+单行：
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+
+多行：
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+```
+
+### tar 解压缩
+```
+压缩
+tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
+#解压
+tar -xvzf name-of-archive.tar.gz
+```
+
+### Postgres导入导出
+postgresql 导出的数据库， 标准语句，
+
+pg_dump --host [**地址**] --port [**端口**] --username [**数据库的用户名**] > [**导出的文件**] [**数据库名字**]
+
+例子：
+```
+pg_dump --host xxxxx.com --port 3434 --username cs  > cs.sql cs
+```
+
+postgresql导入数据库， 标准语句：
+
+psql -d [**数据库名字**] -f [**文件名**] [**用户名**]
+
+例子：
+```
+psql -d cs  -f cs.sql cs
 ```
