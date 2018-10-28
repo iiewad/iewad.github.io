@@ -1,16 +1,14 @@
 ---
 layout: post
-title:  "ActiveAdmin数据图表"
-date:   2018-10-26 11:46:00 +0800
-categories: ruby Rails
+title: ActiveAdmin 数据图表
+date: 2018-10-26 10:25:35 +0800
+categories: nginx
 ---
 
 ### Gemfile
-
 Gemlist:
 - [groupdate](https://github.com/ankane/groupdate)
 - [chartkick](https://github.com/ankane/chartkick)
-
 ```ruby
 #Gemfile
 gem 'groupdate'
@@ -47,16 +45,12 @@ Running via Spring preloader in process 87926
 #  app/admin/stu_user_chart.rb
 ActiveAdmin.register_page "StuUserChart" do
   content do
-    #para column_chart [["2016-01-01", 30], ["2016-02-01", 54]], stacked: true, library: {colors: ["#D80A5B", "#21C8A9", "#F39C12", "#A4C400"]}
-    para line_chart StuUser.group_by_day(:created_at).count
+    column_chart [["2016-01-01", 30], ["2016-02-01", 54]], stacked: true, library: {colors: ["#D80A5B", "#21C8A9", "#F39C12", "#A4C400"]}
+    #para line_chart StuUser.group_by_day(:created_at).count
   end
 end
 ```
 
-![](https://l.ruby-china.com/photo/2018/83c02fc2-3daa-461f-8e25-ad288437fa15.jpg!large)
-
-
 ### 有帮助的链接
 - [Adding Google Charts to your Active Admin Application](https://spin.atomicobject.com/2016/11/23/adding-google-charts-active-admin-application/)
 - [Custom activeadmin pages with charts](http://juanda.me/create-custom-activeadmin-pages-with-charts)
-

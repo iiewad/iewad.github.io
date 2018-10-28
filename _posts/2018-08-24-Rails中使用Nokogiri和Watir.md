@@ -1,9 +1,8 @@
 ---
 layout: post
-title:  "在Rails App. 中使用Nokogiri 和 Watir"
-date:   2018-08-24 10:00:06 +0800
-categories: Ruby
-tag: ruby, rails, spider, chromedriver, google-chrome
+title: Rails中使用Nokogiri和Watir
+date: 2018-08-24 09:24:12 +0800
+categories: nginx
 ---
 
 最近我的Rails App. 中，有场景需要抓取学校官网某栏目的新闻内容为小程序提供数据，故使用了`Nokogiri`来实现，因该页面的分页是用Js来渲染的导致在Nokogiri查找分页节点的时候出现异常，后经搜索得知有`Watir`这个Gem。
