@@ -7,7 +7,7 @@ categories: nginx
 
 ## 废话
 我的Wordpress原本是丢在腾讯云低配（1+1+20）的学生机上，现在毕业不再继续使用。
-![image](https://note.youdao.com/favicon.ico)
+
 服务器运行着Rails App，因为各种环境搭起来心太累，所以我直接使用 [LAMP](https://lnmp.org/)
 ```shell
 wget http://soft.vpser.net/lnmp/lnmp1.5.tar.gz -cO lnmp1.5.tar.gz && tar zxf lnmp1.5.tar.gz && cd lnmp1.5 && ./install.sh lamp
