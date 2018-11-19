@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>开发过程的一些记录 | Iewad</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="开发过程的一些记录" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="查看端口被哪个程序占用 sudo lsof -i tcp:port" />
+<meta property="og:description" content="查看端口被哪个程序占用 sudo lsof -i tcp:port" />
+<link rel="canonical" href="http://localhost:4000/nginx/2017/07/19/%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95.html" />
+<meta property="og:url" content="http://localhost:4000/nginx/2017/07/19/%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95.html" />
+<meta property="og:site_name" content="Iewad" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-19T09:03:15+08:00" />
+<script type="application/ld+json">
+{"description":"查看端口被哪个程序占用 sudo lsof -i tcp:port","@type":"BlogPosting","url":"http://localhost:4000/nginx/2017/07/19/%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95.html","headline":"开发过程的一些记录","dateModified":"2017-07-19T09:03:15+08:00","datePublished":"2017-07-19T09:03:15+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/nginx/2017/07/19/%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Iewad" /></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Iewad</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">开发过程的一些记录</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-07-19T09:03:15+08:00" itemprop="datePublished">Jul 19, 2017
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="查看端口被哪个程序占用">查看端口被哪个程序占用</h3>
+<p><code class="highlighter-rouge">sudo lsof -i tcp:port</code></p>
+
+<h3 id="看到进程的pid可以将进程杀死">看到进程的PID，可以将进程杀死。</h3>
+<p><code class="highlighter-rouge">sudo kill -9 PID</code></p>
+
+<h3 id="文件查找">文件查找</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locate nginx.conf
+find . -name game
+</code></pre></div></div>
+
+<h3 id="利用pwgen生成密码">利用pwgen生成密码</h3>
+<p><code class="highlighter-rouge">pwgen</code></p>
+
+<h3 id="命令行插入代码至文件mac">命令行插入代码至文件(mac)</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-&gt; sed <span class="nt">-i</span> <span class="s1">''</span> <span class="s1">'1i\
+quote&gt; hello
+quote&gt; '</span> hello.txt
+</code></pre></div></div>
+
+<h3 id="ruby解析xml节点">ruby解析xml节点</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rexml/document'</span>
+<span class="kp">include</span> <span class="no">REXML</span>
+<span class="n">xmlstr</span> <span class="o">=</span> <span class="s1">'&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;string xmlns="MUI"&gt;{"rList":[{"DormId":"G1276242854","DormName":"东湖公寓","RoomId":"","RoomAccountID":""},{"DormId":"G1290492858","DormName":"丰泽公寓","RoomId":"","RoomAccountID":""},{"DormId":"G1283531903","DormName":"金岸公寓","RoomId":"","RoomAccountID":""},{"DormId":"G1252577939","DormName":"芷兰公寓","RoomId":"","RoomAccountID":""}],"Status":"1","Message":"请求成功","rowCount":4}&lt;/string&gt;'</span>
+
+<span class="n">xmldoc</span> <span class="o">=</span> <span class="no">Document</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">xmlstr</span><span class="p">)</span>
+ 
+<span class="c1"># 获取 root 元素</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">xmldoc</span><span class="p">.</span><span class="nf">root</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="nf">get_text</span><span class="p">.</span><span class="nf">to_s</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h3 id="ruby将hash的key转为小写">ruby将Hash的key转为小写</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">hash</span><span class="p">.</span><span class="nf">transform_keys!</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:downcase</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="ls显示文件大小">ls显示文件大小</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-lh</span> ~
+</code></pre></div></div>
+
+<h3 id="scp-文件上传下载">scp 文件上传/下载</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># upload</span>
+scp <span class="nt">-P</span> 8864 ./tmp/member.xls deployer@test-17pdf.kdan.cn:/var/www
+
+<span class="c"># download</span>
+scp <span class="nt">-P</span> 2222 root@www.vpser.net:/root/lnmp0.4.tar.gz /home/lnmp0.4.tar.gz
+</code></pre></div></div>
+
+<h3 id="wordpress-htaccess">wordpress .htaccess</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&lt;/IfModule&gt;
+</code></pre></div></div>
+
+<h3 id="vim-强写">VIM 强写</h3>
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">w</span> <span class="p">!</span>sudo tee %
+</code></pre></div></div>
+
+<h3 id="rails4-不验证authenticity_token">Rails4+ 不验证authenticity_token</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">skip_before_action</span> <span class="ss">:verify_authenticity_token</span>
+</code></pre></div></div>
+
+<h3 id="github-空项目">GitHub 空项目</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># create a new repository on the command line
+echo "# golang-book-practice" &gt;&gt; README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:iiewad/golang-book-practice.git
+git push -u origin master
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#push an existing repository from the command line
+git remote add origin git@github.com:iiewad/golang-book-practice.git
+git push -u origin master
+</code></pre></div></div>
+<p><a href="https://iewad.me/">iewad</a></p>
+
+<h3 id="terminal-代理">Terminal 代理</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span><span class="s1">'http://localhost:8118'</span>
+<span class="nb">export </span><span class="nv">https_proxy</span><span class="o">=</span><span class="s1">'http://localhost:8118'</span>
+
+<span class="c">#取消代理</span>
+
+<span class="nb">unset </span>http_proxy
+<span class="nb">unset </span>https_proxy
+</code></pre></div></div>
+
+<h3 id="tmux备忘">tmux备忘</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux new -s session_name
+tmux a -t session_name
+tmux switch -t session_name
+
+</code></pre></div></div>
+
+<h3 id="rvm-gem-install">rvm gem install</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm @global do gem install bundle
+rvm rubygems current #update gems
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install libv8 -v '3.16.14.13'  -- --with-system-v8
+</code></pre></div></div>
+
+<h3 id="css文本溢出处理">css文本溢出处理</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">单行：</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
+<span class="nt">text-overflow</span><span class="nd">:ellipsis</span><span class="o">;</span>
+<span class="nt">white-space</span><span class="o">:</span> <span class="nt">nowrap</span><span class="o">;</span>
+
+<span class="err">多行：</span>
+<span class="nt">display</span><span class="o">:</span> <span class="nt">-webkit-box</span><span class="o">;</span>
+<span class="nt">-webkit-box-orient</span><span class="o">:</span> <span class="nt">vertical</span><span class="o">;</span>
+<span class="nt">-webkit-line-clamp</span><span class="o">:</span> <span class="nt">3</span><span class="o">;</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="tar-解压缩">tar 解压缩</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>压缩
+tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
+#解压
+tar -xvzf name-of-archive.tar.gz
+</code></pre></div></div>
+
+<h3 id="postgres导入导出">Postgres导入导出</h3>
+<p>postgresql 导出的数据库， 标准语句，</p>
+
+<p>pg_dump –host [<strong>地址</strong>] –port [<strong>端口</strong>] –username [<strong>数据库的用户名</strong>] &gt; [<strong>导出的文件</strong>] [<strong>数据库名字</strong>]</p>
+
+<p>例子：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pg_dump --host xxxxx.com --port 3434 --username cs  &gt; cs.sql cs
+</code></pre></div></div>
+
+<p>postgresql导入数据库， 标准语句：</p>
+
+<p>psql -d [<strong>数据库名字</strong>] -f [<strong>文件名</strong>] [<strong>用户名</strong>]</p>
+
+<p>例子：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql -d cs  -f cs.sql cs
+</code></pre></div></div>
+
+<h3 id="pdf-to-word">pdf to word</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>soffice --infilter="writer_pdf_import" --convert-to doc file.pdf
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/nginx/2017/07/19/%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95.html" hidden></a>
+</article>
+
+      </div>
+    </main><canvas
+id="glcanvas"
+style="
+width: 150px;
+height: 150px;
+position: fixed;
+top: auto;
+bottom: 50px;
+left: auto;
+right: 0;
+"
+>
+</canvas>
+<script type="text/javascript" src="/assets/javascripts/live2d.min.js"></script>
+<script type="text/javascript" src="/assets/javascripts/Simple.js"></script>
+<script type="text/javascript">
+  Simple();
+</script>
+
+
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Iewad</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Iewad</li><li><a class="u-email" href="mailto:lidawei.me@gmail.com">lidawei.me@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/iiewad"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">iiewad</span></a></li><li><a href="https://twitter.com/i_iewad"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">i_iewad</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Not yet!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>ActiveAdmin 数据图表 | Iewad</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="ActiveAdmin 数据图表" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Gemfile Gemlist: groupdate chartkick #Gemfile gem &#39;groupdate&#39; gem &quot;chartkick&quot;" />
+<meta property="og:description" content="Gemfile Gemlist: groupdate chartkick #Gemfile gem &#39;groupdate&#39; gem &quot;chartkick&quot;" />
+<link rel="canonical" href="http://localhost:4000/nginx/2018/10/26/ActiveAdmin-%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8.html" />
+<meta property="og:url" content="http://localhost:4000/nginx/2018/10/26/ActiveAdmin-%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8.html" />
+<meta property="og:site_name" content="Iewad" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-26T10:25:35+08:00" />
+<script type="application/ld+json">
+{"description":"Gemfile Gemlist: groupdate chartkick #Gemfile gem &#39;groupdate&#39; gem &quot;chartkick&quot;","@type":"BlogPosting","url":"http://localhost:4000/nginx/2018/10/26/ActiveAdmin-%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8.html","headline":"ActiveAdmin 数据图表","dateModified":"2018-10-26T10:25:35+08:00","datePublished":"2018-10-26T10:25:35+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/nginx/2018/10/26/ActiveAdmin-%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Iewad" /></head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Iewad</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ActiveAdmin 数据图表</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-10-26T10:25:35+08:00" itemprop="datePublished">Oct 26, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="gemfile">Gemfile</h3>
+<p>Gemlist:</p>
+<ul>
+  <li><a href="https://github.com/ankane/groupdate">groupdate</a></li>
+  <li><a href="https://github.com/ankane/chartkick">chartkick</a>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Gemfile</span>
+<span class="n">gem</span> <span class="s1">'groupdate'</span>
+<span class="n">gem</span> <span class="s2">"chartkick"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>执行<code class="highlighter-rouge">$ bundle install</code></p>
+
+<h3 id="activeadmin-引入图表js库">ActiveAdmin 引入图表js库</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#config/initializers/active_admin.rb</span>
+<span class="no">ActiveAdmin</span><span class="p">.</span><span class="nf">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">register_javascript</span> <span class="s1">'https://www.gstatic.com/charts/loader.js'</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/assets/javascripts/active_admin.js.coffee</span>
+<span class="c1">#= require active_admin/base</span>
+<span class="c1">#= require chartkick</span>
+</code></pre></div></div>
+
+<h3 id="activeadmin-添加图表页面">ActiveAdmin 添加图表页面</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rails g active_admin:page StuUserChart
+Running via Spring preloader <span class="k">in </span>process 87926
+      create  app/admin/stu_user_chart.rb
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#  app/admin/stu_user_chart.rb
+ActiveAdmin.register_page "StuUserChart" do
+  content do
+    column_chart [["2016-01-01", 30], ["2016-02-01", 54]], stacked: true, library: {colors: ["#D80A5B", "#21C8A9", "#F39C12", "#A4C400"]}
+    #para line_chart StuUser.group_by_day(:created_at).count
+  end
+end
+</code></pre></div></div>
+
+<h3 id="有帮助的链接">有帮助的链接</h3>
+<ul>
+  <li><a href="https://spin.atomicobject.com/2016/11/23/adding-google-charts-active-admin-application/">Adding Google Charts to your Active Admin Application</a></li>
+  <li><a href="http://juanda.me/create-custom-activeadmin-pages-with-charts">Custom activeadmin pages with charts</a></li>
+</ul>
+
+  </div><a class="u-url" href="/nginx/2018/10/26/ActiveAdmin-%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8.html" hidden></a>
+</article>
+
+      </div>
+    </main><canvas
+id="glcanvas"
+style="
+width: 150px;
+height: 150px;
+position: fixed;
+top: auto;
+bottom: 50px;
+left: auto;
+right: 0;
+"
+>
+</canvas>
+<script type="text/javascript" src="/assets/javascripts/live2d.min.js"></script>
+<script type="text/javascript" src="/assets/javascripts/Simple.js"></script>
+<script type="text/javascript">
+  Simple();
+</script>
+
+
+<footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Iewad</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Iewad</li><li><a class="u-email" href="mailto:lidawei.me@gmail.com">lidawei.me@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/iiewad"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">iiewad</span></a></li><li><a href="https://twitter.com/i_iewad"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">i_iewad</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Not yet!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
