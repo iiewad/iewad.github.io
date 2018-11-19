@@ -1,5 +1,3 @@
-console.log('11111');
-debugger
 /**
 *  Sample.js
 *
@@ -16,7 +14,6 @@ window.onerror = function(msg, url, line, col, error) {
 }
 
 var Simple = function() {
-    console.log('Simple start')
     /*
     * Live2Dモデルのインスタンス
     */
