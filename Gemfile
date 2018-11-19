@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.7.2"
+gem "jekyll", "~> 3.7.4"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"
@@ -30,8 +30,8 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 require 'json'
 require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+#versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 #gem 'github-pages', versions['github-pages']
-gem 'github-pages', '~> 191'
+gem 'github-pages'
 
