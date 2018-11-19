@@ -34,4 +34,4 @@ require 'open-uri'
 
 #gem 'github-pages', versions['github-pages']
 gem 'github-pages'
-
+gem "live2d"
